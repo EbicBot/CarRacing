@@ -24,6 +24,5 @@ class Game{
             form=new Form();
             form.display();
         }
-
     }
 }
