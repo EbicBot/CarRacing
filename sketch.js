@@ -2,9 +2,10 @@ var database;
 var form,player,game;
 var gameState=0;
 var playerCount;
+var allPlayers;
 
-
-function setup(){
+function setup()
+{
   database = firebase.database();
   console.log(database);
   createCanvas(400,400);
@@ -12,9 +13,9 @@ function setup(){
   game= new Game();
   game.getState();
   game.start();
-
 }
 
-function draw(){
+function draw()
+{
  
 }

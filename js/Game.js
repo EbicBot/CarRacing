@@ -1,24 +1,31 @@
-class Game{
-    constructor(){
+class Game
+{
+    constructor()
+    {
 
     }
 
-    getState(){
+    getState()
+    {
         var gameStateref=database.ref("gameState")
-        gameStateref.on("value",function(data){
+        gameStateref.on("value",function(data)
+        {
             gameState=data.val();
         })
     }
 
 
-    update(state){
+    update(state)
+    {
         database.ref("/").update({
             gameState: state
         })
     }
 
-    start(){
-        if (gameState===0){
+    start()
+    {
+        if (gameState===0)
+        {
             player=new Player();
             player.getCount();
             form=new Form();

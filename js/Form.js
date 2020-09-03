@@ -1,26 +1,34 @@
-class Form{
-    constructor(){
-
+class Form
+{
+    constructor()
+    {
+        this.title=createElement("h2");
+        this.input=createInput("name");
+        this.button=createButton("Join");
+        this.greeting=createElement("h2")
     }
-
-    display(){
-        var title=createElement("h2")
-        title.html("Car Racing Multiplayer")
-        title.position(200,0);
-        var input=createInput("name")
-        input.position(200,200);
-        var button=createButton("Join")
-        button.position(250,250);
-        button.mousePressed(function(){
-            input.hide();
-            button.hide();
-            var name=input.value();
+    hide(){
+        this.greeting.hide()
+        this.button.hide()
+        this.input.hide();
+    }
+    display()
+    {
+        this.title.html("Car Racing Multiplayer")
+        this.title.position(200,0);
+        this.input.position(200,200);
+        this.button.position(250,250);
+        this.button.mousePressed(()=>
+        {
+            this.input.hide();
+            this.button.hide();
+            player.name=this.input.value();
             playerCount=playerCount+1
-            player.update(name)
+            player.index=playerCount
+            player.update()
             player.updateCount(playerCount);
-            var greeting=createElement("h2")
-            greeting.html("Hello"+name)
-            greeting.position(200,200);
+            this.greeting.html("Hello"+player.name)
+            this.greeting.position(200,200);
         });
     }
 }
